@@ -1,18 +1,18 @@
-import greeting
-import config
-import pars
-import ex
+import modules.config
+import modules.pars
+import modules.ex
+import eel
+
 
 def main():
-    res = greeting.getTask()
-    res = int(res)
+    eel.init('interface')
 
-    if res == 1:
-        links = pars.getLinks(config.page_url, config.class_el)
-        ex.saveLinks(links)
+    @eel.expose
+    def getAction(param):
+        return param
 
-    if res == 2:
-        pars.getContent()
+    eel.start('app.html', size=(700, 300))
+
 
 if __name__ == "__main__":
     main()

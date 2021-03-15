@@ -1,10 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
-import config
+import modules.config
 import json
 
 
-def getLinks(url = '', identificator = ''):
+def getLinks(url='', identificator=''):
     page_count = config.page_count
     news_count = 0
     links = []
@@ -37,7 +37,4 @@ def getLinks(url = '', identificator = ''):
 
 
 def getContent():
-    f = open('files/links.json', 'r')
-    res = json.load(f)
-    f.close()
-    print(res)
+    pass
